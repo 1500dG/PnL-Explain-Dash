@@ -12,7 +12,6 @@ warnings.filterwarnings('ignore')
 
 # Initialize Dash app
 app = dash.Dash(__name__)
-server = app.server
 
 # Define layout
 app.layout = html.Div(style={'margin': '50px 200px'}, children=[
@@ -221,4 +220,4 @@ def update_charts(selected_timeframe, n_clicks, filename, fromdate, todate, mark
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(host='127.0.0.1', port=5000, debug=False)
+    app.run_server(debug=False)
