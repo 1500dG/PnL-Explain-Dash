@@ -219,3 +219,17 @@ body {
 	box-shadow: 0 5px 100px rgba(182, 182, 182, 0.15), 0 0 100px rgba(182, 182, 182, 0.15), 0 0 100px rgba(182, 182, 182, 0.15),
 		0 0 100px rgba(182, 182, 182, 0.15);
 }
+
+.DateInput {
+	width: 110px;
+}
+
+.DateInput_input, .DateInput_input_1 {
+	Height: 35px;
+	font-size: 15px;
+}
+
+.DateInput_input, .DateInput_input_2 {
+Height: 35px;
+font-size: 15px;
+}
