@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 # Initialize Dash app
 app = dash.Dash(__name__)
-
+server = app.server
 # Define layout
 app.layout = html.Div(style={'margin': '50px 200px'}, children=[
     html.Link(
