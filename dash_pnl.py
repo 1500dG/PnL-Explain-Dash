@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 app = dash.Dash(__name__)
 server = app.server
 # Define layout
-app.layout = html.Div(style={'margin': '50px 200px'}, children=[
+app.layout = html.Div(style={'margin': '50px 150px'}, children=[
     html.Link(
         rel='stylesheet',
         href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
@@ -57,13 +57,13 @@ app.layout = html.Div(style={'margin': '50px 200px'}, children=[
         html.Div([
             html.Div([
                 html.H3("Inputs", style={"margin-left": "40px", "margin-top": "30px"}),  # Title
-                html.Hr(style={'margin-left': '40px', "margin-right": "50px", "margin-top": "10px", 'border-top': '1px solid black'}),  # Line below the title
-                dcc.DatePickerSingle(id='fromdate', placeholder='From Date', style={'margin-left': '40px', "margin-top": "20px"}),
-                html.I(className="fas fa-sliders-h", style={'margin-left': '30px'}),  # Time icon
-                dcc.DatePickerSingle(id='todate', placeholder='To Date', style={'margin-left': '30px', "margin-top": "10px"}),
-                dcc.Input(id='market', type='text', placeholder='Market', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', "margin-top": "20px", 'margin-left': '40px', 'display': 'inline-block', 'width': '100px', 'height': '38px'}),
-                dcc.Input(id='model', type='text', placeholder='Model', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', 'margin-left': '20px', 'display': 'inline-block', 'width': '100px', 'height': '38px'}),
-                dcc.Input(id='node', type='text', placeholder='Node', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', 'margin-left': '20px', 'display': 'inline-block', 'width': '100px', 'height': '38px'}), 
+                html.Hr(style={'margin-left': '40px', "margin-right": "38px", "margin-top": "10px", 'border-top': '1px solid black'}),  # Line below the title
+                dcc.DatePickerSingle(id='fromdate', placeholder='From Date', style={'margin-left': '40px', "margin-top": "20px", 'display': 'inline-block'}),
+                html.I(className="fas fa-sliders-h", style={'margin-left': '10px', 'display': 'inline-block'}),  # Time icon
+                dcc.DatePickerSingle(id='todate', placeholder='To Date', style={'margin-left': '10px', "margin-top": "20px", 'display': 'inline-block'}),
+                dcc.Input(id='market', type='text', placeholder='Market', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border-radius':"5px",'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', "margin-top": "20px", 'margin-left': '40px', 'display': 'inline-block', 'width': '74px', 'height': '35px'}),
+                dcc.Input(id='model', type='text', placeholder='Model', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border-radius':"5px",'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', 'margin-left': '18px', 'display': 'inline-block', 'width': '74px', 'height': '35px'}),
+                dcc.Input(id='node', type='text', placeholder='Node', style={'text-align': 'center' ,"justifyContent":'center','background-color': 'transparent', 'border-radius':"5px",'border': 'none', 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)', "font-size": "15px", 'font-family': 'Roboto', 'margin-left': '18px', 'display': 'inline-block', 'width': '74px', 'height': '35px'}), 
                 html.Div([
                     html.Div([
                     html.Button(
@@ -71,13 +71,13 @@ app.layout = html.Div(style={'margin': '50px 200px'}, children=[
                         children=html.A(children=[
                             html.Span(className='icon', children=[html.I(className='fas fa-check', style={'color': 'white'})]),
                             'Submit'
-                        ], className='btn'), style={"border": "0px", "width":"340px"}
+                        ], className='btn'), style={"border": "0px", "width":"250px"}
                     )
                 ], style={'display': 'inline-block'}),
                 ], className='container', style={"margin-left": "40px","margin-right": "50px", "margin-bottom": "20px"})
             ], style={'background': 'white', 'margin-left': '1%', 'border-radius': '7px', 'border': '1px solid rgba(233, 233, 233)'}),
             
-            html.Div([html.Div(id='status_message', className='stats', style={'display': 'inline-block', 'margin-right': '50px',"color": "#8B8B8B"})],
+            html.Div([html.Div(id='status_message', className='stats', style={'display': 'inline-block', 'margin-right': '00px',"color": "#8B8B8B", "font-size": "15px"})],
                       style={'margin-top': '10px', 'text-align': 'center'})
         ], style={'width': '30%', 'display': 'inline-block'}),
         
