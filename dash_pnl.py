@@ -36,9 +36,10 @@ app.layout = html.Div(style={'margin': '50px 150px'}, children=[
                 options=[
                     {'label': 'Last 7 Days', 'value': 7},
                     {'label': 'Last 30 Days', 'value': 30},
-                    {'label': 'Last 90 Days', 'value': 90}
+                    {'label': 'Last 90 Days', 'value': 90},
+                    {'label': 'Full Timeseries', 'value': 999},
                 ],
-                value=7,
+                value=999,
                 style={'fontFamily': 'Roboto', "margin-left": "2px", "margin-right":"2px"}
             )
         ], style={'width': '30%', 'display': 'inline-block'}),
@@ -152,7 +153,11 @@ def update_charts(selected_timeframe, n_clicks, filename, fromdate, todate, mark
 
     df = dfx.to_pandas()
 
-    filtered_df = df.tail(selected_timeframe)
+    if selected_timeframe != 999:
+
+        filtered_df = df.tail(selected_timeframe)
+    else:
+        filtered_df = df
 
     filtered_df['cumulative_profit'] = filtered_df['profit_total'].cumsum()
 
